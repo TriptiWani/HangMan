@@ -48,11 +48,6 @@ $(document).ready(function(){
       }
     }
     populateDiv();
-
-    // $('#guessword').html('Word:'+word);
-    // $('#allGuessedLetters').html('All Guessed Letters:'+ allGuessedLetters);
-    // $('#correctlyGuessedLetters').html('Only Correct guesses:' + correctlyGuessedLetters);
-    // $('#hangmanCount').html('Hangman Count:' + hangmanCount);
   };
 
   var userInput = function() {
