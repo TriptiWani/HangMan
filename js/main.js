@@ -4,7 +4,6 @@ $(document).ready(function(){
   //['CaptainAmerica','Hulk','IronMan','AntMan'];
 
   var word = _.sample(wordList).toUpperCase();
-  console.log(word);
   var guessedLetters = [];
   var correctlyGuessedLetters = [];
   var hangmanCount = 0;
@@ -38,6 +37,9 @@ $(document).ready(function(){
         $('#letter'+occurredAt[n]).removeClass('bg');
         $('#letter'+occurredAt[n]).html(l);
       });
+      if (correctlyGuessedLetters.join() === wordToGuess.join()){
+        alert('Congrats! You guessed it');
+      }
     } else {
       // console.log('No',l);
       alert('Its incorrect guess');
@@ -75,6 +77,7 @@ $(document).ready(function(){
       alert('Please enter only one letter at a time');
     } else {
       if (_(allGuessedLetters).includes(letter) ) {
+        $(this).val('');
         alert('You have already guessed this letter..Try a new one');
       } else {
         allGuessedLetters.push(letter);
